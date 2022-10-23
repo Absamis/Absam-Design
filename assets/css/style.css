@@ -353,3 +353,28 @@ ul.abs-list{ */
 .abs-nav-toggle .abs-nav-toggler{
     cursor: pointer;
 }
+
+/** TABLE COMPONENT DESIGNS **/
+.abs-table-wrapper{
+    overflow: auto;
+    white-space: nowrap;
+}
+table.abs-table{
+    background-color: #f3f3f3;
+    width: 100%;
+}
+table.abs-table.stripped tr:nth-child(even){
+    /* filter: brightness(97%); */
+    filter: blur(10%);
+
+}
+table.abs-table,table.abs-table tr,table.abs-table td,table.abs-table th{
+    padding: 8px;
+}
+table.abs-table.bordered,
+table.abs-table.bordered td,
+table.abs-table.bordered th,
+table.abs-table.bordered tr {
+    border-collapse: collapse;
+    border: 1px solid #e1e1e1;
+}
