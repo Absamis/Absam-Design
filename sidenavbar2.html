@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link type="text/css" rel="stylesheet" href="assets/css/all.css">
+	<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="assets/css/style2.css">
+	<style>
+	</style>
+</head>
+<body class="bg-light text-dark">
+	<div class="abs-side-navbar">
+	    <div class="abs-nav-brand ml-1">
+	        <button type="button" class="btn mr-2 abs-nav-toggler" id="nav-toggler">
+	            <i class="fas fa-bars fa-lg"></i>
+	        </button>
+	        <h5 class="ml-1 font-weight-bold text-dark">
+	        	<i class="fa fa-laptop"></i>
+	            ABSDesign
+	        </h5>
+	    </div>
+	    <div class="abs-nav" id="navs">
+	        <ul class="list-unstyled">
+	            <li class="abs-nav-item">
+	                <a href="#" class="abs-nav-link active">
+	                    <span class="icon">
+	                        <i class="fas fa-home"></i>
+	                    </span>
+	                    Dashboard
+	                </a>
+	            </li>
+	            <li class="abs-nav-item">
+	                <a href="#" class="abs-nav-link">
+	                    <span class="icon">
+	                        <i class="fas fa-chalkboard"></i>
+	                    </span>
+	                    Services
+	                </a>
+	            </li>
+	            <li class="abs-nav-item">
+	                <a href="#" class="abs-nav-link">
+	                    <span class="icon">
+	                        <i class="fas fa-power-off"></i>
+	                    </span>
+	                    Logout
+	                </a>
+	            </li>
+	        </ul>
+	    </div>
+	</div>
+
+	<div class="main">
+        <div class="p-2 border-bottom pb-3">
+            <span class="p-2 bg-brow">
+                <span class="" style="font-size: 22px;font-weight: 400;">Welcome back,</span>
+                <span style="font-size: 22px;font-weight: 500;"> Adebiyi</span>
+            </span>
+        </div>
+        <!-- <hr/> -->
+        <div class="d-flex align-items-center justify-content-between flex-wrap p-3">
+            <h4 class="">Dashboard</h4>
+            <div class="">
+                <form class="" action="/admin/transaction" method="post">
+                    <div class="form-input-group">
+                        <button type="submit" class="btn input-append">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <input type="text" class="form-input" name="id" placeholder="search">
+                    </div>
+                </form>
+        	</div>
+        </div>
+	</div>
+	<script>
+        var navb = document.querySelector(".abs-side-navbar");
+        document.querySelector(".abs-side-navbar .abs-nav-toggler#nav-toggler").onclick = function(event) {
+            if (navb.classList.contains("abs-nav-resp")) {
+                navb.classList.remove("abs-nav-resp")
+                this.innerHTML = '<i class="fa fa-bars"></i>'
+            } else {
+                navb.classList.add("abs-nav-resp")
+                this.innerHTML = '<i class="fa fa-times"></i>'
+            }
+        }
+    </script>
+    <script type="text/javascript" src=" {{ asset('assets/js/jquery-3.5.1.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('assets/js/popper.min.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('assets/js/custom-script.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('assets/js/helper-script.js') }}"></script>
+</body>
+</html>

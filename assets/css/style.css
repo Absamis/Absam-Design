@@ -162,6 +162,7 @@ BUTTON DESIGNS AND UTILITIES
 }
 .abs-navbar{
     padding: 0 1.2em;
+    position: relative;
 }
 .abs-navbar.abs-wide,.abs-navbar.abs-wide-lg{
     justify-content: space-evenly;
@@ -181,6 +182,43 @@ BUTTON DESIGNS AND UTILITIES
     margin: 0px 2px;
     font-size: 16.5px;
 }
+.abs-navbar[class*="abs-navbar-expand-"] .abs-nav-menu{
+    display: none;
+}
+.abs-navbar .abs-nav-toggle {
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.abs-navbar .abs-nav-toggle .abs-nav-toggler{
+    padding: 7px;
+}
+.nav-close{
+    display: block;
+    cursor: pointer;
+    padding: 0px 10px;
+    text-align: right;
+}
+.abs-navbar .abs-nav-menu.abs-mobile .abs-menu-item{
+    display: block;
+}
+.abs-navbar[class*="abs-navbar-expand-"] .abs-nav-menu.abs-mobile{
+    animation: nav-slideout .1s linear;
+}
+@keyframes nav-slideout{
+    from{width: 0%;}
+    to{width: 100%;}
+}
+/* .abs-navbar .abs-nav-menu.abs-mobile::before{
+    display:block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 30;
+    height: 100%;
+    background-color: blue;
+} */
 
 /** INPUT FORM DESIGN **/
 input.abs-form-input,select.abs-form-input,textarea.abs-form-input{
@@ -217,6 +255,41 @@ select.abs-form-input option{
     border: none;
     border-radius: 0;
     padding: 10px 8px;
+}
+
+.abs-input-styled{
+    position: relative;
+}
+.abs-input-styled .label{
+    display: none;
+}
+.abs-input-styled .abs-label{
+    position: absolute;
+    top: -10px;
+    left: .8em;
+    display: block;
+    padding: 0px 5px;
+    color: blue;
+    background: #fff;
+    font-size: 14px;
+    z-index: 30;
+    animation: inp-up linear .1s;
+}
+
+.abs-chunk-input-group{
+    margin: 20px 0px;
+    display: flex;
+}
+.abs-chunk-input-group .abs-chunk-item{
+    margin: 0 5px;
+    font-size: 20px;
+    padding: 15px;
+    width: 15px;
+    height: 15px;
+}
+@keyframes inp-up{
+    from {top: 10px;font-size: 16px;}
+    to {top: -10px;font-size: 14px;}
 }
 
 .abs-badge{
@@ -377,4 +450,44 @@ table.abs-table.bordered th,
 table.abs-table.bordered tr {
     border-collapse: collapse;
     border: 1px solid #e1e1e1;
+}
+
+/*TAB DESIGN*/
+.abs-tab.tab-vertical{
+    display: flex;
+}
+.abs-tab .abs-tab-navs{
+    display: flex;
+}
+.abs-tab.tab-vertical .abs-tab-navs{
+    flex-direction: column;
+}
+
+.abs-tab .abs-tab-navs .abs-nav-item{
+    padding: 5px 15px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+.abs-tab.tab-vertical .abs-tab-navs .abs-nav-item{
+    padding: 5px 15px;
+    border-bottom: none;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+}
+.abs-tab.tab-vertical .abs-tab-navs .abs-nav-item.active{
+    border: 1px solid #ccc;
+    border-right: none;
+}
+.abs-tab .abs-tab-navs .abs-nav-item.active{
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+
+.abs-tab .abs-tab-group{
+    margin-top: 10px;
+    padding: 15px;
+}
+.abs-tab .abs-tab-group .abs-tab-item:not(.active){
+    display: none;
 }
